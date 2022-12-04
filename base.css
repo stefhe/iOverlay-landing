@@ -101,6 +101,9 @@ body {
     text-align: center;
   }
 }
+.hero--content .version p {
+  color: #fff;
+}
 .about-ioverlay {
   display: flex;
   flex-direction: column;
@@ -165,6 +168,14 @@ body {
   border-radius: 100%;
   background: #ACDA6F;
   margin: 0 0 0 -1.6rem;
+}
+.about-ioverlay--included-content ul li span {
+  display: inline-block;
+  background: #D0D9FE;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 8px 0 -8px 0;
+  width: auto;
 }
 .our-discord span {
   background: #E9EBF5;
