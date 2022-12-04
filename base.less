@@ -12,29 +12,20 @@ html {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
 }
 
 body {
     height: auto;
 }
 
-// .container {
-//     // display: flex;
-//     // align-items: center;
-//     // justify-content: center;
-//     // flex-direction: column;
-//     display: inline-block;
-//     width: 100%;
-//     margin: 0 25% 6.4rem 25%;
-// }
-
 // container for aligning content
 .container {
     margin: 0 30%;
 
-    @media (min-width: 30em) and (max-width: 80em) {
+    @media @mobile, @med, @xl {  
         margin: 0 2.4rem;
-    }
+        }
 }
 
 // rules for each section so spacing is evenly aligned
@@ -42,7 +33,7 @@ body {
     margin: 2.4rem 0;
 
     &:last-of-type {
-        margin: 0 0 4.8rem 0;
+        margin: 0 0 0 0;
     }
 }
 
@@ -58,8 +49,6 @@ body {
     -webkit-background-size: cover;
     background-size: cover;
     z-index: 1;
-    // background-color: rgba(255, 255, 255, 0.5); 
-    // mix-blend-mode: darken;
 
         &:before {
             content: "";
@@ -69,9 +58,8 @@ body {
             width: 100%;
             background: linear-gradient(107.56deg, #B9FF81 0%, rgba(0, 0, 0, 0.7) 100%);
             mix-blend-mode: multiply;
-            // opacity: 0.4;
             z-index: -1;
-            // mix-blend-mode: darken;
+            mix-blend-mode: darken;
         }
 
     &--blur {
@@ -80,10 +68,7 @@ body {
         justify-content: center;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border-right: 1px solid whitesmoke;
         height: 100%;
-        // transform-origin: top left;
-        // transform: skew(0, 0);
     }    
 
     &--content {
@@ -91,8 +76,6 @@ body {
         display: flex;
         align-items: center;
         flex-direction: column;
-        // transform-origin: top left;
-        // transform: skew(0, 5deg);
 
             & .logo {
                 display: flex;
@@ -123,6 +106,10 @@ body {
                 &-meta {
                     font-size: 2.4rem;
                     color: rgba(255, 255, 255, 0.7);
+
+                    @media @mobile {
+                        text-align: center;
+                    }
                 }
             }
     }
@@ -168,10 +155,9 @@ body {
         margin: 4rem auto;
         padding: 3.2rem 2.4rem;
 
-            // mobile media
-            @media (min-width: 30em) and (max-width: 80em) {
-                width: 100%;
-            }
+        @media @mobile, @med, @xl, @xxl {
+            width: 100%;
+        }
 
         &-content {
             h3 {
@@ -212,6 +198,7 @@ body {
     }
 }
 
+// section our discord
 .our-discord {
     & span {
         background: #E9EBF5;
@@ -219,6 +206,59 @@ body {
         padding: 4px;
         margin: 0 4px;
         font-weight: bold;;
+    }
+}
+
+.buy-me {
+    background: @pink;
+    padding: 4.0rem 0;
+
+    & p {
+    // color: #fff;
+
+        & a {
+            color: #fff;
+
+            &:hover {
+                color: #6E0932;
+            }
+        }
+    
+    }
+}
+
+// the message at the top
+.message {
+    display: flex;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 4rem;
+    width: 100%;
+    background: @pink;
+    z-index:9999;
+    .flex-center;
+
+    @media @mobile {
+        height: auto;
+        padding: 8px;
+    }
+
+    & p {
+        color: #fff;
+
+        & span {
+            font-weight: bold;
+        }
+
+        & a {
+            color: #fff;
+            text-decoration: underline;
+
+            &:hover {
+                color: #6E0932;
+            }
+        }
     }
 }
 
@@ -246,6 +286,10 @@ body {
     border-radius: 4px;
     width: 400px;
     .animation;
+
+    @media @mobile {
+        width: auto;
+    }
 
 
     &--main {
@@ -276,6 +320,10 @@ body {
         display: flex;
         flex-direction: column;
         font-weight: bold;
+
+        @media @mobile {
+            margin: 0 3.2rem 0 0;
+        }
 
         & span {
             font-size: 1.2rem;
@@ -315,7 +363,6 @@ body {
 h3 {
     font-size: 1rem;
     letter-spacing: 0.1rem;
-    // text-transform: uppercase;
 }
 
 h2 {
@@ -326,11 +373,25 @@ h2 {
 p {
     font-size: 1.6rem;
     line-height: 2.9rem;
-    // width: ~"calc( 100% - 50px )" ;
     color: @black;
 
     & a {
         color: @green-dark;
+        .animation;
+
+        &:hover {
+            color: #225107;
+        }
+    }
+}
+
+a {
+    color: @green-dark;
+    .animation;
+    text-decoration: none;
+
+    &:hover {
+        color: #225107;
     }
 }
 
@@ -338,3 +399,13 @@ p {
 @black: #090808;
 @green: #ACDA6F;
 @green-dark: #5D902B;
+@pink: #EB459E;
+
+// media queries
+@mobile:    ~"only screen and (max-width: 576px)";
+@med:       ~"only screen and (max-width: 768px)";
+@xl:        ~"only screen and (max-width: 992px)";
+@xxl:       ~"only screen and (max-width: 1200px)";
+
+// flex things
+@flex-center: {align-items: center; justify-content: center;};

@@ -11,6 +11,7 @@ html {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 body {
   height: auto;
@@ -18,7 +19,7 @@ body {
 .container {
   margin: 0 30%;
 }
-@media (min-width: 30em) and (max-width: 80em) {
+@media only screen and (max-width: 576px), only screen and (max-width: 768px), only screen and (max-width: 992px) {
   .container {
     margin: 0 2.4rem;
   }
@@ -27,7 +28,7 @@ body {
   margin: 2.4rem 0;
 }
 .section:last-of-type {
-  margin: 0 0 4.8rem 0;
+  margin: 0 0 0 0;
 }
 .hero {
   display: flex;
@@ -50,6 +51,7 @@ body {
   background: linear-gradient(107.56deg, #B9FF81 0%, rgba(0, 0, 0, 0.7) 100%);
   mix-blend-mode: multiply;
   z-index: -1;
+  mix-blend-mode: darken;
 }
 .hero--blur {
   display: flex;
@@ -57,7 +59,6 @@ body {
   justify-content: center;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-right: 1px solid whitesmoke;
   height: 100%;
 }
 .hero--content {
@@ -95,6 +96,11 @@ body {
   font-size: 2.4rem;
   color: rgba(255, 255, 255, 0.7);
 }
+@media only screen and (max-width: 576px) {
+  .hero--content .logo-meta {
+    text-align: center;
+  }
+}
 .about-ioverlay {
   display: flex;
   flex-direction: column;
@@ -126,7 +132,7 @@ body {
   margin: 4rem auto;
   padding: 3.2rem 2.4rem;
 }
-@media (min-width: 30em) and (max-width: 80em) {
+@media only screen and (max-width: 576px), only screen and (max-width: 768px), only screen and (max-width: 992px), only screen and (max-width: 1200px) {
   .about-ioverlay--included {
     width: 100%;
   }
@@ -167,6 +173,47 @@ body {
   margin: 0 4px;
   font-weight: bold;
 }
+.buy-me {
+  background: #EB459E;
+  padding: 4rem 0;
+}
+.buy-me p a {
+  color: #fff;
+}
+.buy-me p a:hover {
+  color: #6E0932;
+}
+.message {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  height: 4rem;
+  width: 100%;
+  background: #EB459E;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 576px) {
+  .message {
+    height: auto;
+    padding: 8px;
+  }
+}
+.message p {
+  color: #fff;
+}
+.message p span {
+  font-weight: bold;
+}
+.message p a {
+  color: #fff;
+  text-decoration: underline;
+}
+.message p a:hover {
+  color: #6E0932;
+}
 .animation {
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -189,6 +236,11 @@ body {
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
+@media only screen and (max-width: 576px) {
+  .button {
+    width: auto;
+  }
+}
 .button--main {
   background: #090808;
 }
@@ -210,6 +262,11 @@ body {
   display: flex;
   flex-direction: column;
   font-weight: bold;
+}
+@media only screen and (max-width: 576px) {
+  .button--text {
+    margin: 0 3.2rem 0 0;
+  }
 }
 .button--text span {
   font-size: 1.2rem;
@@ -250,4 +307,18 @@ p {
 }
 p a {
   color: #5D902B;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+p a:hover {
+  color: #225107;
+}
+a {
+  color: #5D902B;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+a:hover {
+  color: #225107;
 }
