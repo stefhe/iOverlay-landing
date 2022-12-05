@@ -40,7 +40,7 @@ body {
 .hero {
     display: flex;
     position: relative;
-    height: 95vh;
+    height: 90vh;
     width: 100vw;
     // background: url(https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/teaser_720x406x2/dam/pnr/2022/Motorsports/FIA-WEC/Race-5-Fuji/Race/Gallery/M22_4568_fine.jpeg/jcr:content/M22_4568_fine.jpeg) no-repeat center center fixed; 
     background: url(https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1080x624/dam/pnr/2022/Motorsports/Porsche-Supercup-2023/M22_5148_fine.jpg/jcr:content/M22_5148_fine.jpg
@@ -49,6 +49,12 @@ body {
     -webkit-background-size: cover;
     background-size: cover;
     z-index: 1;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 92%);
+
+        @media @mobile, @med, @xl {
+            height: 80vh;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 97%);
+        }
 
         &:before {
             content: "";

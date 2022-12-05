@@ -33,7 +33,7 @@ body {
 .hero {
   display: flex;
   position: relative;
-  height: 95vh;
+  height: 90vh;
   width: 100vw;
   background: url(https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1080x624/dam/pnr/2022/Motorsports/Porsche-Supercup-2023/M22_5148_fine.jpg/jcr:content/M22_5148_fine.jpg
     ) no-repeat center center fixed;
@@ -41,6 +41,13 @@ body {
   -webkit-background-size: cover;
   background-size: cover;
   z-index: 1;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 92%);
+}
+@media only screen and (max-width: 576px), only screen and (max-width: 768px), only screen and (max-width: 992px) {
+  .hero {
+    height: 80vh;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 97%);
+  }
 }
 .hero:before {
   content: "";
