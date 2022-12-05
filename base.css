@@ -188,8 +188,12 @@ body {
   background: #EB459E;
   padding: 4rem 0;
 }
+.buy-me p {
+  color: #fff;
+}
 .buy-me p a {
   color: #fff;
+  text-decoration: underline;
 }
 .buy-me p a:hover {
   color: #6E0932;
@@ -332,4 +336,8 @@ a {
 }
 a:hover {
   color: #225107;
+}
+::selection {
+  background: #EB459E;
+  color: #fff;
 }

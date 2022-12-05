@@ -229,10 +229,11 @@ body {
     padding: 4.0rem 0;
 
     & p {
-    // color: #fff;
+    color: #fff;
 
         & a {
             color: #fff;
+            text-decoration: underline;
 
             &:hover {
                 color: #6E0932;
@@ -424,3 +425,8 @@ a {
 
 // flex things
 @flex-center: {align-items: center; justify-content: center;};
+
+::selection {
+    background: @pink;
+    color: #fff;
+}
