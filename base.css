@@ -26,9 +26,10 @@ body {
 }
 .section {
   margin: 2.4rem 0;
+  padding: 6rem 0 0 0;
 }
 .section:last-of-type {
-  margin: 0 0 0 0;
+  margin: 12rem 0 0 0;
 }
 .hero {
   display: flex;
@@ -193,7 +194,7 @@ body {
 }
 .buy-me {
   background: #EB459E;
-  padding: 4rem 0;
+  padding: 12rem 0;
 }
 .buy-me p {
   color: #fff;
@@ -245,16 +246,19 @@ body {
   align-items: center;
   justify-content: center;
 }
+.flex-left {
+  display: flex;
+}
 .button {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 0;
-  padding: 16px;
+  margin: 1.6rem 0;
+  padding: 1.6rem;
   color: #fff;
   font-size: 1.6rem;
-  border-radius: 4px;
-  width: 400px;
+  border-radius: 0.4rem;
+  width: auto;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
@@ -285,11 +289,6 @@ body {
   flex-direction: column;
   font-weight: bold;
 }
-@media only screen and (max-width: 576px) {
-  .button--text {
-    margin: 0 3.2rem 0 0;
-  }
-}
 .button--text span {
   font-size: 1.2rem;
   opacity: 0.75;
@@ -303,6 +302,22 @@ body {
   border-radius: 100%;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
+}
+.button--icon-left {
+  margin: 0 4rem 0 0;
+}
+@media only screen and (max-width: 576px) {
+  .button--icon-left {
+    margin: 0 2.4rem 0 0;
+  }
+}
+.button--icon-right {
+  margin: 0 0 0 4.8rem;
+}
+@media only screen and (max-width: 576px) {
+  .button--icon-right {
+    margin: 0 0 0 2.4rem;
+  }
 }
 .button--icon span {
   margin: 0 0 0 8px;
